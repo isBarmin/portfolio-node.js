@@ -1,0 +1,142 @@
+extends ../_start
+
+block variables
+  - var title = 'Welcome'
+
+
+
+
+
+block content
+  .welcome
+    .welcome__parallax.parallax
+      .parallax__layer.parallax__layer--01
+        img(src='assets/img/parallax/layer-2.png')
+      .parallax__layer.parallax__layer--02
+        img(src='assets/img/parallax/layer-3.png')
+      .parallax__layer.parallax__layer--03
+        img(src='assets/img/parallax/layer-4.png')
+      .parallax__layer.parallax__layer--04
+        img(src='assets/img/parallax/sky-3.png')
+      .parallax__layer.parallax__layer--05
+        img(src='assets/img/parallax/layer-5.png')
+      .parallax__layer.parallax__layer--06
+        img(src='assets/img/parallax/sky-2.png')
+      .parallax__layer.parallax__layer--07
+        img(src='assets/img/parallax/layer-6.png')
+      .parallax__layer.parallax__layer--08
+        img(src='assets/img/parallax/layer-7.png')
+      .parallax__layer.parallax__layer--09
+        img(src='assets/img/parallax/sky-1.png')
+
+    a.btn.btn--clear.welcome__btn-auth(href="#404"  data-flip="toggle") Авторизоваться
+
+    .welcome__flipper
+      .welcome__view
+        .form-modal
+          .form-modal__body
+            .form-modal__section
+              .me
+                .me__photo(style="background-image: url(assets/userfiles/me.jpg);")
+                .me__name Бармин Илья
+                .me__caption Личный сайт веб разработчика
+
+            .form-modal__section
+              ul.social.social--colored
+                li.social__item
+                  a.social__btn.social__btn--vk(href="#404", title="Вконтакте")
+                li.social__item
+                  a.social__btn.social__btn--git(href="#404", title="Github")
+                li.social__item
+                  a.social__btn.social__btn--in(href="#404", title="Linkedin")
+
+          .form-modal__foot.btn-group
+            .btn-group__item
+              a.btn.btn--crystal.btn-group__btn(href="works.html") Мои работы
+            .btn-group__item
+              a.btn.btn--crystal.btn-group__btn(href="about.html") Обо мне
+            .btn-group__item
+              a.btn.btn--crystal.btn-group__btn(href="blog.html") Блог
+
+
+
+      .welcome__view.welcome__view--back
+        form#form-authorization.form-modal(name="login")
+          .form-modal__body
+            .title.form-modal__title Авторизуйтесь
+
+            .form-row
+              .input-complex
+                input.field.input-complex__field(
+                  type="text"
+                  name="login"
+                  placeholder="Логин"
+                  required
+                  pattern="^[a-zA-Z][a-zA-Z0-9]{2,12}$"
+                  title="2-12 символов (a-Z, 0-9)"
+                )
+                .input-complex__side
+                  i.input-complex__icon.fa.fa-user
+
+            .form-row
+              .input-complex
+                input.field.input-complex__field(
+                  type="password"
+                  name="password"
+                  placeholder="Пароль"
+                  required
+                  pattern="^[a-zA-Z][a-zA-Z0-9]{8,20}$"
+                )
+                .input-complex__side
+                  i.input-complex__icon.fa.fa-key
+
+            .form-row.form-row--near
+              label.check.check--checkbox
+                input.check__input(
+                  type="checkbox"
+                  name="isHuman"
+                  value="yes"
+                  required
+                )
+                i.check__fake
+                span.check__label Я человек
+
+            .form-row
+              .form-row__caption Вы точно не робот?
+
+              ul.check-group.check-group--inline
+                li.check-group__item
+                  label.check.check--radio.check--highlight
+                    input.check__input(
+                      type="radio"
+                      name="reallyHuman"
+                      value="yes"
+                      required
+                    )
+                    i.check__fake
+                    span.check__label Да
+
+                li.check-group__item
+                  label.check.check--radio.check--highlight
+                    input.check__input(
+                      type="radio"
+                      name="reallyHuman"
+                      value="no"
+                      required
+                      checked
+                    )
+                    i.check__fake
+                    span.check__label Не уверен
+
+          .form-modal__foot.btn-group.btn-group--equal
+            .btn-group__item
+              a.btn.btn--crystal.btn-group__btn(href="#404"  data-flip="toggle") На главную
+            .btn-group__item
+              button.btn.btn--crystal.btn-group__btn(type="submit") Войти
+
+
+
+
+
+    .welcome__copyright
+      include ../common/_copyright

@@ -1,0 +1,69 @@
+.form-row {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+  .form-row__caption,
+  .form-section__title {
+    margin-bottom: .25em;
+    color: rgba($textColor, .8);
+    font-weight: bold;
+  }
+
+
+.form-row--near {
+  margin-bottom: 1.2rem;
+}
+
+
+
+.form-section {
+  border: none;
+}
+
+
+#form-admin-skills {
+
+  .form-section {
+    display: inline-block;
+  }
+
+  .btn {
+    display: block;
+  }
+}
+
+
+
+.file-add {
+  position: relative;
+  margin-bottom: 20px;
+  opacity: .6;
+
+  [type="file"] {
+    position: absolute;
+    z-index: 10;
+    top: 0;  bottom: 0;
+    left: 0;  right: 0;
+    opacity: 0;
+  }
+}
+
+.file-add__btn {
+  display: inline-block;
+  vertical-align: middle;
+  width:  35px;
+  height: 34px;
+  border: none;
+  background: url('../img/icons/icon-upload-img.png') no-repeat;
+}
+
+.file-add__input {
+  padding-left: 10px;
+  border: none;
+  background-color: transparent;
+  color: $green;
+}

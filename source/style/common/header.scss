@@ -1,0 +1,40 @@
+.header {
+  @extend %clearfix;
+
+  position: absolute;
+  z-index: 20;
+  left: 0;  right: 0;
+  padding: 2.7rem 3rem;
+}
+
+  .header__part {
+    float: left;
+
+    &:last-child {
+      float: right;
+    }
+  }
+
+  .header__social {}
+
+
+
+@include tablets {
+  .header {
+    padding-left:  2.3rem;
+    padding-right: 2.3rem;
+  }
+}
+
+
+@include phones {
+  .header {
+    padding: 1rem;
+  }
+
+    .header__social {
+      .social__btn {
+        font-size: 2.2rem;
+      }
+    }
+}

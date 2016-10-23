@@ -1,0 +1,50 @@
+.who-am-i {
+  max-width: 442px;
+  margin: 0 auto auto;
+}
+
+  .who-am-i__photo-wrap {
+    margin-bottom: 3.2rem;
+    background: $green  no-repeat  top / cover;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+    .who-am-i__photo {
+      display: none;
+      width: 100%;
+    }
+
+  .who-am-i__title {
+    margin-bottom: .7em;
+  }
+
+  .who-am-i__content {}
+
+
+
+
+
+@include tablets {
+  .who-am-i {
+    max-width: 472px;
+  }
+
+    .who-am-i__title {
+      margin-bottom: .25em;
+    }
+}
+
+
+@include phones {
+  .who-am-i__photo-wrap {
+    margin-bottom: 2.3rem;
+  }
+
+  .who-am-i__title {
+    margin-bottom: 1rem;
+  }
+}

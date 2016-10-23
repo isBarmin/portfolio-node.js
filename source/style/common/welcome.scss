@@ -1,0 +1,128 @@
+.welcome {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  min-height: 100vh;
+  padding: 10rem 1rem;
+  // background: #fff url(../img/bg/bg-mountains.jpg)  no-repeat center / cover;
+  text-align: center;
+  perspective: 1000;
+}
+
+  .welcome__btn-auth {
+    position: absolute;
+    top: 2rem;  right: 2rem;
+  }
+
+
+  // двухсторонний элемент
+  .welcome__flipper {
+    max-width: 380px;
+    margin: auto;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+
+  }
+    .welcome__view {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      backface-visibility: hidden;
+
+      &:not(.welcome__flipper--back) {
+        float: left;
+        margin-right: -100%;
+      }
+
+      &--back {
+        transform: rotateY(180deg);
+      }
+    }
+
+
+  .welcome__parallax {
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: 0;  right: 0;
+    // min-width: 1200px;
+    background: #CCD1CB url(../img/parallax/layer-1.jpg) top  no-repeat;
+  }
+
+
+.loaded .welcome__flipper {
+  animation: show 1s;
+  transform-origin: 50% 0;
+}
+
+
+    // отображается другая сторона
+    .welcome__flipper--flip {
+      transform: rotateY(180deg);
+    }
+
+
+
+  .welcome__copyright {
+    position: absolute;
+    left: 0;  right: 0;
+    bottom: 3.7rem;
+    color: $white;
+    font-weight: 300;
+    text-align: center;
+
+    br {
+      display: none;
+    }
+  }
+
+
+
+@keyframes show {
+  from {
+    opacity: .25;
+    transform:  rotateX(-90deg)  scale(.75)
+  }
+  to   {
+    opacity: 1;
+    transform:  rotateX(0deg)  scale(1)
+  }
+}
+
+
+
+
+@include laptop {
+  .welcome {
+    background: url(../img/bg/bg-mountains.jpg) no-repeat center / cover;
+  }
+  .welcome__parallax {
+    display: none;
+  }
+}
+
+@include tablets {
+  .welcome {
+    padding-top:    7rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .welcome__btn-auth {
+    top: 1rem;  right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@include phones {
+  .welcome__copyright {
+    bottom: 1rem;
+
+    .divider {
+      display: none;
+    }
+
+    br {
+      display: block;
+    }
+  }
+}

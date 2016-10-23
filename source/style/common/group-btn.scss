@@ -1,0 +1,29 @@
+.btn-group {
+  display: table;
+}
+
+  .btn-group__item {
+    display: table-cell;
+    box-shadow: inset -2px 0 0 rgba($white, .8);
+
+    &:first-child {
+      border-bottom-left-radius: inherit;
+    }
+
+    &:last-child {
+      box-shadow: none;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
+    .btn-group__btn {
+      border-radius: inherit;
+      width: 100%;
+      padding-left:  1.25em;
+      padding-right: 1.25em;
+    }
+
+
+.btn-group--equal {
+  table-layout: fixed;
+}

@@ -1,0 +1,166 @@
+extends ../_template
+
+block variables
+  - var title = 'My works'
+
+
+
+
+
+block content
+  .section.first
+    .first__bg
+
+    .first__bg-text
+      svg
+        use(xlink:href='assets/img/sprite.svg#portfolio_header')
+
+    .first__me
+      .me
+        .me__photo(style="background-image: url(assets/userfiles/me.jpg);")
+        .me__name.me__name--lg Бармин Илья
+        .me__caption Личный сайт веб разработчика
+
+    .first__btn-next(data-go="next")
+
+
+
+
+
+  .section.section--works-title
+    .section__title.double-title
+      .double-title__text.title Мои работы
+      svg.double-title__bg.double-title__bg--lg
+        use(xlink:href='assets/img/sprite.svg#works_header')
+
+
+
+  .section.section--slider
+    .slider#js-slider
+      .slider__desc
+        .slider__desc-in
+          .slider__title.title Название проекта
+          .slider__info Использованные технологии
+
+          a.slider__link.btn(href="#404"  target="_blank")
+            i.btn__icon.fa.fa-link
+            span.btn__text Посмотреть сайт
+
+
+      .slider__view
+        ul.slider__slides.slides
+          each work, i in works
+            if i === 0
+              li.slides__item.slides__item--active
+                img(src=`upload/${work.pictures[0]}`  alt="")
+
+            else
+              li.slides__item
+                img(src=`upload/${work.pictures[0]}`  alt="")
+
+
+      .slider__controls
+        a.slider__control.slider__control--prev(href="#404"  title="Предыдущий проект")
+          ul.slider__slides.slides
+            each work in works
+              li.slides__item
+                img(src=`upload/${work.pictures[0]}`  alt="")
+
+        a.slider__control.slider__control--next(href="#404"  title="Следующий проект")
+          ul.slider__slides.slides
+            each work in works
+              li.slides__item
+                img(src=`upload/${work.pictures[0]}`  alt="")
+
+
+        ul.slider__data.slider-data
+          each work in works
+            li.slider-data__item(
+              data-title=work.name
+              data-tools=work.tech
+              data-link=`http://${work.link}`
+            )
+
+
+
+
+
+
+
+
+
+  .section.section--about-me
+    .section__bg(data-blur-container="form")
+
+    .section__body
+      .section__title.double-title
+        .double-title__text.title Что обо мне говорят
+        svg.double-title__bg.double-title__bg--lg
+          use(xlink:href='assets/img/sprite.svg#about_header')
+
+
+      .section__line.section__testimonials-wrap
+        .testimonials
+          .testimonials__item.testimonial
+            .testimonial__content
+              p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бессонных ночей!
+            .testimonial__info
+              .testimonial__avatar(style="background-image: url(assets/userfiles/user-ava-1.jpg);")
+              .testimonial__info-who
+                .testimonial__name Ковальчук Дмитрий
+                .testimonial__desc основатель Loftchool
+
+          .testimonials__item.testimonial
+            .testimonial__content
+              p Этот код выдержет любые испытания. Только, пожалуйста, не загружйте сайт в слишком старых браузерах!
+            .testimonial__info
+              .testimonial__avatar(style="background-image: url(assets/userfiles/user-ava-2.jpg);")
+              .testimonial__info-who
+                .testimonial__name Зар Захаров
+                .testimonial__desc главный преподаватель
+
+
+
+      .section__line
+        form.form-modal.form-modal--callback(name="callback")
+          .form-modal__blur(data-blur-elem="form")
+
+          .form-modal__body
+            .title.form-modal__title Связаться со мной
+
+            .form-row
+              input.field.field--full(
+                type="text"
+                name="name"
+                placeholder="Имя"
+                required
+              )
+
+            .form-row
+              input.field.field--full(
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              )
+
+            .form-row
+              textarea.field.field--full(
+                name="message"
+                placeholder="Ваше сообщение"
+                required
+                pattern="^.{8,100}$"
+              )
+
+          .form-modal__foot.btn-group.btn-group--equal
+            .btn-group__item
+              button.btn.btn--crystal.btn-group__btn(type="submit") Отправить
+            .btn-group__item
+              button.btn.btn--crystal.btn-group__btn(type="reset") Очистить
+
+
+      a.section__btn-top(href="#top"  data-go="top")
+
+
+    .section__foot
+      include ../common/_footer

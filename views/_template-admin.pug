@@ -1,0 +1,25 @@
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    title Админка - #{title}
+
+    meta(content="width=device-width, initial-scale=1"  name="viewport")
+    meta(content="ie=edge, chrome=1"  http-equiv="X-UA-Compatible")
+
+    link(rel='stylesheet' href='/assets/css/foundation.css')
+    link(rel='stylesheet' href='/assets/css/app.css')
+
+    script(src='/assets/js/foundation.js' defer)
+    script(src='/assets/js/app.js' defer)
+
+
+
+
+  body.admin
+    include admin/common/_header
+
+    .adm-main
+      block content

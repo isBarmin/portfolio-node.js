@@ -1,0 +1,138 @@
+.about {
+  display: flex;
+  font-size: 0;
+}
+
+  .about__section {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding: 2rem 2rem 7rem;
+    font-size: 1.6rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 100%;
+    }
+  }
+
+    .about__title {}
+
+    .about__content {
+      margin-bottom: 4.8rem;
+    }
+
+
+
+  .about__me {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    background: #EFEEE9;
+
+    &:before {
+      height: 8.9vw;
+      background: linear-gradient(to top right, #EFEEE9 49.9%, transparent 50.1%) no-repeat;
+    }
+
+    & .about__title {
+      flex-grow: 1;
+      margin: 0 auto 5rem;
+      padding: 0 5rem;
+    }
+  }
+
+
+
+  .about__skills {
+    background: #EEEBDF;
+    padding-left: 4rem;
+
+    &:before {
+      height: 8.9vw;
+      background: linear-gradient(to top left, #EEEBDF 49.9%, transparent 50.1%) no-repeat;
+    }
+
+    & .about__title {
+      max-width: calc(6.5em + 80px);
+      margin-bottom: 2.8rem;
+    }
+  }
+
+
+
+@include laptop {
+  .about__me {
+    display: block;
+
+    & .about__title {
+      padding: 0;
+    }
+  }
+}
+
+
+
+@include tablets {
+  .about {
+    display: block;
+    font-size: inherit;
+    line-height: 1.714;
+  }
+
+    .about__section {
+      width: 100%;
+      padding: 4rem 2rem 4.5rem;
+      font-size: inherit;
+    }
+
+    .about__me {
+
+      &:before {
+        height: 8.9vw;
+        background:
+          linear-gradient(to top right, #EFEEE9 49.9%, transparent 50.1%) left,
+          linear-gradient(to top left,  #EFEEE9 49.9%, transparent 50.1%) right;
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
+      }
+    }
+
+
+    .about__skills {
+      &:before {
+        display: none;
+      }
+
+      & .about__title {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .about__content {
+      max-width: 472px;
+      margin: 0 auto 4.1rem;
+    }
+}
+
+
+@include phones {
+  .about__section {
+    padding: 2.5rem 1rem 2.2rem;
+  }
+
+    .about__me {
+      .about__title {
+        margin-bottom: 2.3rem;
+      }
+    }
+
+    .about__content {
+      margin-bottom: 2rem;
+    }
+}

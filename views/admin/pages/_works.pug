@@ -1,0 +1,59 @@
+form.form#form-admin-work(name="admin-work")
+  .form-row
+    .form-row__caption Добавить работу
+    input.field.field--md(
+      type="text"
+      name="title"
+      placeholder="Название проекта"
+      required
+    )
+
+  .form-row
+    input.field.field--md(
+      type="text"
+      name="tech"
+      placeholder="Технологии"
+      required
+    )
+
+  .form-row
+    input.field.field--md(
+      type="text"
+      name="link"
+      placeholder="ссылка"
+      required
+    )
+
+  div.file-add
+    div.file-add__input-wrap
+      button.file-add__btn(
+        type="button"
+        title="Выбрать файл"
+      )
+      input.file-add__input(
+        type="text"
+        value="Загрузить карнтинку"
+        disabled
+      )
+
+    input#uploadimage(
+      type="file"
+      name="image"
+    )
+
+
+  script.
+    //Обработчик для стилизованного выбора файла
+    //Подстановка названия выбранного файла в фэйковое поле
+    document.querySelector('[type="file"]').addEventListener('change', function() {
+      var realVal   = this.value;
+      var lastIndex = realVal.lastIndexOf('\\') + 1;
+      var fake      = document.querySelector('.file-add__input');
+
+      if(lastIndex !== -1) {
+        realVal = realVal.substr(lastIndex);
+        fake.value = realVal;
+      }
+    });
+
+  button.btn(type="submit") Добавить

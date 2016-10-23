@@ -1,0 +1,29 @@
+.contacts {}
+
+  .contacts__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+    .contacts__item {
+      margin-bottom: 1.3em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+      .contacts__icon {
+        display: inline-block;
+        vertical-align: -.1em;
+        width: 1em;
+        margin-right: .45em;
+        color: $green;
+        font-size: 1.45em;
+        text-align: center;
+      }
+      .contacts__text {
+        font-weight: 600;
+        opacity: .8;
+      }

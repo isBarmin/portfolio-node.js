@@ -1,0 +1,40 @@
+.adm-tab {
+  position: relative;
+}
+
+.adm-tab__head {
+  background: #F0EFE9;
+  color: rgba($textColor, .8);
+}
+
+      .adm-tab__control {
+        display: inline-block;
+        vertical-align: top;
+        padding: 1.8rem 7rem;
+        border-right: 2px solid $white;
+        color: inherit;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+
+    .adm-tab__control--active {
+      background: $white;
+      color: $green;
+    }
+
+
+
+.adm-tab__body {
+  display: none;
+  padding: 1rem;
+
+  &--active {
+    display: block;
+  }
+}
+
+    .adm-tab__part {
+      padding: 3rem 2rem;
+    }

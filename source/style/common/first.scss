@@ -1,0 +1,122 @@
+.first {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  color: $white;
+  font-size: 0;
+  text-align: center;
+  overflow: hidden;
+
+  // цветовой фильтр
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;  right: 0;
+    top: 0;  bottom: 0;
+    background: rgba(#016672, .3);
+  }
+}
+
+  .first__bg {
+    position: absolute;
+    z-index: -1;
+    left: 0;  right: 0;
+    top: 0;
+    height: 130vh;
+    background: url('../img/bg/bg-mountains.jpg')  no-repeat top / cover;
+
+    &  img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // фоновая надпись
+  .first__bg-text {
+    position: absolute;
+    left: 0;  right: 0;
+    top: 0;  bottom: 0;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    & svg {
+      width: 100%;
+      max-width: 1200px;
+      height: 25vw;
+      display: inline-block;
+      vertical-align: middle;
+      fill: rgba($white, .06);
+    }
+  }
+
+
+
+  .first__title-wrap {
+    position: relative;
+    padding: .8em 0;
+  }
+    .first__title {
+      margin-bottom: 0;
+      color: inherit;
+    }
+
+    .first__desc {}
+
+
+
+  .first__me {
+    position: absolute;
+    left: 0;  right: 0;
+    top: 50%;
+    width: 100%;
+    max-width: 40rem;
+    margin: auto;
+    font-size: 1.6rem;
+    transform: translateY(-50%);
+  }
+
+  .first__btn-next {
+    position: absolute;
+    z-index: 10;
+    left: 0;  right: 0;
+    bottom: 3.7rem;
+    width:  6rem;
+    height: 6rem;
+    margin: auto;
+    border-radius: 50%;
+    font-family: Fontawesome;
+    font-size: 2.8rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    opacity: .7;
+    transition: opacity .5s;
+
+    &:before {
+      content: '\f078 ';
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+
+
+@include tablets {
+  .first__bg-text {
+    display: none;
+  }
+}
+
+
+@include phones {
+  .first__me {
+    font-size: 1.4rem;
+  }
+}

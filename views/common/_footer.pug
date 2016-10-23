@@ -1,0 +1,33 @@
+footer.footer
+  .footer__section
+    .footer__part.footer__nav
+      nav.nav.nav--inline
+        ul.nav__list
+          li.nav__item
+            a.nav__link(href="works.html") Мои работы
+          li.nav__item
+            a.nav__link(href="about.html") Обо мне
+          li.nav__item
+            a.nav__link(href="blog.html") Блог
+          li.nav__item
+            a.nav__link(href="#404") Авторизация
+
+
+    .footer__part.footer__social
+      ul.social.social--circle
+        li.social__item
+          a.social__btn.social__btn--vk(href="#404", title="Вконтакте")
+        li.social__item
+          a.social__btn.social__btn--git(href="#404", title="Github")
+        li.social__item
+          a.social__btn.social__btn--in(href="#404", title="Linkedin")
+
+
+  .footer__section
+    .footer__part
+      .footer__desc
+        | Я веб-разработчик из Перми, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+
+    .footer__part
+      .footer__copyright
+        include _copyright

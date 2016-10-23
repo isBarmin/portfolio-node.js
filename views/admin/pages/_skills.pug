@@ -1,0 +1,22 @@
+form.form#form-admin-skills(name="admin-skills")
+  each section in skills
+    fieldset.form-section
+      legend.form-section__title= section.name
+
+      table.table
+        colgroup
+          col(style="width: 100px;")
+          col(style="width: 55px;")
+          col(style="width: 70px;")
+        each skill in section.items
+          tr
+            td= skill.name
+            td.align-right
+              input.field.field--full.field--sm(
+                type="text"
+                name= 'skills_'+section.id+'_'+skill.key
+                value= skill.value
+              )
+            td %
+
+  button.btn(type="submit") Сохранить

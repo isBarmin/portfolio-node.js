@@ -1,0 +1,119 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  background: #fff;
+  color: $textColor;
+  font: 10px/1.5 Roboto, sans-serif;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 1.6rem;
+}
+
+
+
+a {
+  outline: none;
+}
+
+
+p {
+  &:first-child {
+    margin-top: 0 !important;
+  }
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+button {
+  outline: none;
+}
+
+
+
+::selection {
+  background: rgba($green, .8);
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 0 1px rgba(0,0,0,.25);
+}
+
+
+::placeholder {
+  text-indent: 0;
+  opacity: .35;
+  transition:
+    opacity .75s;
+}
+  :focus::placeholder {
+    text-indent: 100%;
+    opacity: 0;
+    transition:
+      opacity .5s,
+      text-indent 1s;
+  }
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.title {
+  position: relative;
+  display: table;
+  margin: 0 auto .7em;
+  padding: 0 1.125em;
+  padding: 0 40px;
+  font-family: Bernier, sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.171;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: .475em;
+    width: 22px;
+    height: 5px;
+    background: currentColor;
+    opacity: .2;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+}
+
+
+
+@include tablets {
+  body {
+    font-size: 1.4rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@include phones {
+  .title {
+    font-size: 2.1rem;
+  }
+}

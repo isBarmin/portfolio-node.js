@@ -1,0 +1,94 @@
+.footer {
+  background: rgba($black, .85);
+  color: rgba($white, .5);
+}
+
+  .footer__section {
+    padding: 1.85rem 3rem;
+    font-size: 0;
+
+    & + & {
+      padding-top: 1rem;
+      border-top: 1px solid rgba($white, .1);
+    }
+  }
+
+    .footer__part {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+      padding: 0 1rem;
+      font-size: 1.6rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        text-align: right;
+      }
+    }
+
+      .footer__desc {
+        max-width: 32em;
+      }
+
+      .footer__copyright {
+
+        br {
+          display: none;
+        }
+      }
+
+
+    .footer__nav {
+      width: 80%;
+    }
+    .footer__social {
+      width: 20%;
+    }
+
+
+
+@include tablets {
+  .footer {
+    text-align: center;
+  }
+
+    .footer__section {
+      padding-left:  2rem;
+      padding-right: 2rem;
+      font-size: inherit;
+    }
+
+      .footer__part {
+        display: block;
+        width: auto;
+        margin-bottom: 2rem;
+        font-size: inherit;
+
+        &:last-child {
+          margin-bottom: 0;
+          text-align: inherit;
+        }
+      }
+
+        .footer__desc {
+          max-width: none;
+          margin: auto;
+        }
+}
+
+
+
+@include phones {
+  .footer {
+    font-size: 1.3rem;
+  }
+
+    .footer__section {
+      padding-left:  1rem;
+      padding-right: 1rem;
+    }
+}

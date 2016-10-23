@@ -1,0 +1,82 @@
+.social {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: $white;
+  font-size: 0;
+}
+
+  .social__item {
+    display: inline-block;
+    margin-right: 2.5rem;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  }
+
+    .social__btn {
+      display: block;
+      color: inherit;
+      font-family: FontAwesome;
+      font-size: 2.9rem;
+      line-height: 1;
+      text-align: center;
+      text-decoration: none;
+      opacity: .5;
+      transition:
+        color .5s,
+        border-color .5s,
+        opacity .5s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &--vk {
+        &:before {
+          content: '\f189';
+        }
+      }
+
+      &--git {
+        &:before {
+          content: '\f113';
+        }
+      }
+
+      &--in {
+        &:before {
+          content: '\f0e1';
+        }
+      }
+    }
+
+
+.social--colored {
+  color: $green;
+}
+
+
+.social--circle {
+  &  .social__item {
+    margin-right: 1rem;
+  }
+
+  &  .social__btn {
+    width:  3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+
+    &:hover {
+      border-color: $white;
+      background: $white;
+      color: rgba($textDark, .85);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.admin {
+  position: relative;
+  background: url(../img/bg/bg-mountains.jpg) no-repeat bottom / cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: 0;  right: 0;
+     background:  rgba(#fff, .9)  no-repeat,
+  }
+}
+
+
+.adm-back {
+  color: inherit;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+.adm-title {
+  margin-bottom: 1.7em;
+  font-size: 2.1rem;
+  line-height: 1.62;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+.admin  .form-row__caption {
+  color: $textColor;
+  font-weight: 600;
+}
+
+
+.align-right {
+  text-align: right;
+}

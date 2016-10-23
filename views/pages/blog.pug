@@ -1,0 +1,65 @@
+extends ../_template
+
+block variables
+  - var title = 'Blog'
+
+
+
+
+
+block content
+  .section.first
+    .first__bg
+
+    .first__me
+      .me
+        .me__photo(style="background-image: url(assets/userfiles/me.jpg);")
+
+      .first__title-wrap
+        .first__title.double-title.double-title--blog
+          .double-title__text.title Блог
+          svg.double-title__bg
+            use(xlink:href='assets/img/sprite.svg#blog_header')
+
+        .first__desc Статьи, которые я написал
+
+
+    .first__btn-next(data-go="next")
+
+
+
+
+
+  .blog
+    .blog__in
+      .blog__side
+        .blog__side-trigger
+
+        .blog__menu
+          ul.menu
+            each item, i in items
+              if i === 0
+                li.menu__item.menu__item--active
+                  a.menu__link(href=`#article-${i + 1}`)= item.title
+
+              else
+                li.menu__item
+                  a.menu__link(href=`#article-${i + 1}`)= item.title
+
+
+
+
+
+
+      .blog__main
+
+
+        each item, i in items
+          article.post(data-id=`article-${i + 1}`)
+            h2.post__title.title= item.title
+            .post__info
+              time.post__date(datetime=item.date)= item.date
+            .post__entry= item.body
+
+
+  include ../common/_footer

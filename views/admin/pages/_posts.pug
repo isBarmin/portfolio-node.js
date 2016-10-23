@@ -1,0 +1,50 @@
+form#form-admin-blog(name="admin-blog")
+  .form-row
+    .form-row__caption Добавить запись
+    input.field.field--md(
+    type="text"
+    name="title"
+    placeholder="Название"
+    required
+  )
+
+  .form-row
+    input.field.field--md(
+    type="date"
+    name="date"
+    placeholder="Дата"
+  )
+
+  .form-row
+    textarea.field.field--lg(
+      name="body"
+      placeholder="Содержание"
+      required
+    )
+
+  button.btn(type="submit") Добавить
+
+//- script.
+  (function() {
+    let form = document.querySelector('[name="admin-blog"]');
+    let xhr  = new XMLHttpRequest();
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      xhr.open('POST', '/admin/addItem');
+      let data = {
+         date:  Date.now(),
+         title: form.querySelector('[name="title"]').value,
+         body:  form.querySelector('[name="text"]').value
+      };
+
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(JSON.stringify(data));
+
+      xhr.onload = function() {
+        xhr.responseText;
+        console.log( xhr.responseText );
+      };
+    });
+  })();
+

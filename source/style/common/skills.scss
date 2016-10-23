@@ -1,0 +1,64 @@
+.skills {}
+
+  .skills__section {
+    margin-bottom: 3.9rem;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+    .skills__caption {
+      margin-bottom: .625em;
+      font-size: 2.8rem;
+      line-height: 1.143;
+      font-weight: 600;
+    }
+
+    .skills__container {
+      margin: -2rem -2rem 0;
+      font-size: 0;
+    }
+
+      .skills__item {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2rem 2rem 0;
+        font-size: 1.6rem;
+      }
+
+
+
+@include tablets {
+  .skills {
+    text-align: center;
+  }
+
+    .skills__section {
+      margin-bottom: 3.5rem;
+    }
+
+      .skills__caption {
+        margin-bottom: .8em;
+        font-size: 2.1rem;
+      }
+
+      .skills__container {
+        margin: -1.8rem -1.8rem 0;
+      }
+        .skills__item {
+          padding: 1.8rem 1.8rem 0;
+        }
+}
+
+
+
+@include phones {
+  .skills {
+    margin: 0 1rem;
+  }
+
+    .skills__section {
+      margin-bottom: 1.8rem;
+    }
+}

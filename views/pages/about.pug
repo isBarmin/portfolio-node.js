@@ -1,0 +1,82 @@
+extends ../_template
+
+block variables
+  - var title = 'About me'
+
+
+
+
+
+block content
+  .section.first
+    .first__bg
+
+    .first__bg-text
+      svg
+        use(xlink:href='assets/img/sprite.svg#portfolio_header')
+
+    .first__me
+      .me
+        .me__photo(style="background-image: url(assets/userfiles/me.jpg);")
+        .me__name.me__name--lg Бармин Илья
+        .me__caption Личный сайт веб разработчика
+
+    .first__btn-next(data-go="next")
+
+
+
+
+
+  .section.about
+    .about__section.about__me
+      .about__title.double-title
+        .double-title__text.title Обо мне
+        svg.double-title__bg
+          use(xlink:href='assets/img/sprite.svg#about_header')
+
+      .who-am-i
+        .who-am-i__photo-wrap(style="background-image: url(assets/userfiles/me.jpg);")
+          img.who-am-i__photo(src="assets/userfiles/me.jpg", alt="Это я")
+
+        .who-am-i__title.title Кто я
+
+        .who-am-i__content.content-editable
+          p Я веб разработчик из Перми. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+
+          p Этот сайт сделан в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нём свой контент. А пока смотрите, как тут всё классно и красиво!
+
+
+
+    .about__section.about__skills
+      .about__title.title Чем я могу быть вам полезен
+
+      .about__content.content-editable
+        p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+
+      .skills
+        each section in skills
+          .skills__section
+            .skills__caption= section.name
+
+            .skills__container
+            each skill in section.items
+              .skills__item
+                +pie-chart(skill.value, skill.name)
+
+
+
+
+
+  .section.map
+    .section__body.map__self#map
+
+    .section__body.map__content
+      .map__contacts
+        .map__title.title Контакты
+        include ../common/_contacts
+
+      script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb_DP1D6fAO0idxMvFOys9k26-e3Z_Z2o")
+
+
+    .section__foot
+      include ../common/_footer

@@ -1,0 +1,7 @@
+//- Круговая диаграмма
+mixin pie-chart (value, label)
+  //- div(class=`graph` + ((mod) ? ` graph--${mod}` : ''))
+  div(class='graph graph--tor'  data-label=`${label}`)
+    svg.graph__in(stroke-dasharray=`${value} 100`  viewbox="0 0 32 32")
+      circle.graph__full(r="16" cx="16"  cy="16")
+      circle.graph__part(r="16" cx="16"  cy="16")

@@ -1,0 +1,83 @@
+.post {
+  position: relative;
+  margin-bottom: 13.5rem;
+
+  & + & {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;  bottom: 100%;
+      width: 100%;
+      max-width: 680px;
+      height: 5px;
+      margin-bottom: 6.5rem;
+      background: rgba($black, .07);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+  .post__title {
+    display: block;
+    margin-bottom: .45em;
+    padding: 0;
+    text-align: left;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .post__info {
+    margin-bottom: 1.5rem;
+  }
+
+    .post__date {
+      color: $green;
+    }
+
+
+  .post__entry {
+    max-width: 89rem;
+
+    p {
+      margin: .7em 0;
+    }
+  }
+
+
+
+
+
+@include tablets {
+  .post {
+    margin-bottom: 14%;
+
+    & + &:before {
+      margin-bottom: 6.7%;
+    }
+  }
+}
+
+
+@include phones {
+  .post {
+    margin-bottom: 21%;
+
+    & + &:before {
+      height: 4px;
+      margin-bottom: 10%;
+    }
+  }
+
+    .post__info {
+      margin-bottom: 1rem;
+    }
+}

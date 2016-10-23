@@ -1,0 +1,207 @@
+.field {
+  padding: .595em 1.1em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background: #fff;
+  text-align: inherit;
+  transition: border-color .5s;
+
+  &:focus {
+    border-color: $green;
+
+    & + .input-complex__side {
+      border-right-color: $green;
+    }
+  }
+
+  &--ok {
+    border-color: $green;
+
+    & + .input-complex__side {
+      border-right-color: currentColor;
+      color: $green;
+    }
+  }
+
+  &--error {
+    border-color: $red;
+
+    & + .input-complex__side {
+      border-right-color: currentColor;
+      color: $red;
+    }
+  }
+}
+
+.field--sm {
+  padding: .3em .6em;
+}
+
+textarea.field {
+  vertical-align: top;
+  min-height: 8.8em;
+  max-height: 12em;
+  resize: none;
+}
+
+
+.field--md {
+  width: 100%;
+  max-width: 300px;
+}
+.field--lg {
+  width: 100%;
+  max-width: 500px;
+}
+.field--full {
+  width: 100%;
+}
+
+
+
+.input-complex {
+  position: relative;
+  border-radius: 5px;
+}
+  .input-complex__side {
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: 0;
+    width: 4.5rem;
+    border: 1px solid transparent;
+    border-top:    none;
+    border-bottom: none;
+    border-top-left-radius:    inherit;
+    border-bottom-left-radius: inherit;
+    background: #EFEEE9;
+    color: #C1C7C7;
+    text-align: center;
+    transition:
+      color .5s,
+      border-color .5s;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+  .input-complex__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    color: inherit;
+  }
+
+
+  .input-complex__field {
+    width: 100%;
+    padding-left: 6.2rem;
+  }
+
+
+
+.check {
+  cursor: pointer;
+}
+  .check__input {
+    display: none;
+  }
+  .check__fake {
+    position: relative;
+    top: .25em;
+    display: inline-block;
+    width:  20px;
+    height: 20px;
+    margin-right: .55em;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    background: #fff;
+    color: $green;
+    overflow: hidden;
+  }
+    .check__fake:after {
+      content: '';
+      position: absolute;
+      top: 0;  bottom: 0;
+      left: 0;  right: 0;
+      margin: auto;
+      opacity: 0;
+      transform-origin: 66% 66%;
+      transition: opacity .25s;
+    }
+
+  .check__label {
+    color: rgba($textColor, .8);
+    cursor: pointer;
+  }
+
+  .check__input:checked + .check__fake:after {
+    opacity: 1;
+  }
+
+  .check__input.field--error + .check__fake {
+    border-color: $red;
+  }
+
+
+.check--checkbox {}
+  .check--checkbox .check__fake {
+    margin-right: .625em;
+
+    &:after {
+      right: 2px;  bottom: 2px;
+      width:   6px;
+      height: 10px;
+      border: 2px solid;
+      border-top:  none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+  }
+  .check--checkbox  .check__input:checked + .check__fake {
+    border-color: transparent;
+    background: $green;
+    color: $white;
+  }
+
+
+.check--radio {}
+  .check--radio .check__fake {
+    border-radius: 50%;
+
+    &:after {
+      width:  8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+  }
+
+
+.check--highlight {}
+  .check--highlight  .check__input:checked ~ .check__label {
+    color: $green;
+  }
+
+
+.check-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  .check-group__item {}
+
+.check-group--inline {}
+  .check-group--inline  .check-group__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 3.7rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }

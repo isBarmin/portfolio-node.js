@@ -1,0 +1,107 @@
+.testimonial {
+  padding: 1rem 1.5rem;
+}
+
+  .testimonial__content {
+    margin-bottom: 1.2em;
+
+    &:before {
+      content: '\f10d';
+      display: block;
+      margin-bottom: .55em;
+      color: rgba($textDark, .2);
+      font-family: Fontawesome;
+      font-size: 2.2em;
+      line-height: 1;
+    }
+
+    p {
+      line-height: 1.65;
+    }
+  }
+
+  .testimonial__info {
+    color: $green;
+  }
+    .testimonial__avatar {
+      display: inline-block;
+      vertical-align: middle;
+      width:  7.8rem;
+      height: 7.8rem;
+      margin-right: 2.2rem;
+      border-radius: 50%;
+      background: rgba($green, .5) no-repeat  top / cover;
+      overflow: hidden;
+    }
+
+    .testimonial__info-who {
+      display: inline-block;
+      vertical-align: middle;
+    }
+      .testimonial__name {
+        font-weight: bold;
+      }
+
+      .testimonial__desc {}
+
+
+
+
+
+.testimonials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+
+  .testimonials__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    font-size: 1.6rem;
+  }
+
+
+
+
+
+@include tablets {
+  .testimonials__item {
+    font-size: 1.4rem;
+  }
+
+
+    .testimonial__content {
+
+      &:before {
+        margin-bottom: .325em;
+      }
+
+      p {
+        line-height: 1.714;
+      }
+    }
+}
+
+
+@include phones {
+  .testimonials__item {
+    display: block;
+    width: auto;
+    padding-left:  0;
+    padding-right: 0;
+  }
+
+    .testimonial__content {
+      &:before {
+        text-align: center;
+      }
+    }
+
+    .testimonial__avatar {
+      width:  16.4vw;
+      height: 16.4vw;
+      margin-right: 5vw;
+    }
+}

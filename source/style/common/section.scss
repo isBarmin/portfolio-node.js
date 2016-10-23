@@ -1,0 +1,161 @@
+.section {}
+
+  .section__body {}
+  .section__foot {
+    position: relative;
+  }
+
+  .section__title {
+    position: relative;
+    max-width: 9.5em;
+    margin: auto;
+  }
+
+
+  .section__content {}
+
+
+  .section__line {
+    margin-bottom: 5.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+
+.section__btn-top {
+  display: block;
+  width:  6rem;
+  height: 6rem;
+  margin: auto;
+  border-radius: 50%;
+  color: $white;
+  font-family: Fontawesome;
+  font-size: 2.8rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .7;
+  transition: opacity .5s;
+
+  &:before {
+    content: '\f077 ';
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+
+
+.section--works-title {
+  position: relative;
+  padding: 6rem 0;
+  background: #FBF8F1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;  right: 0;
+    bottom: 100%;
+    height: 8.9vw;
+    background:
+      linear-gradient(to top right, #FBF8F1 49.9%, transparent 50.1%) left,
+      linear-gradient(to top left,  #FBF8F1 49.9%, transparent 50.1%) right;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+  }
+}
+
+
+
+.section--slider {}
+
+
+
+// Секция "Что обо мне говорят"
+.section--about-me {
+  padding-top: 1.4rem;
+  position: relative;
+  overflow: hidden;
+
+  & .section__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;  bottom: 0;
+    left: 0;  right: 0;
+    min-width: 1500px;
+    background: #0A585E url(../img/bg/bg-sea.jpg) no-repeat top / 100%;
+  }
+}
+
+  .section--about-me  .section__body {
+    max-width: 80rem;
+    margin: auto;
+    padding: 0 2rem 3rem;
+  }
+
+  .section--about-me  .section__title {
+    padding-top:    2.825em;
+    padding-bottom: 2.825em;
+  }
+
+
+
+
+
+@include tablets {
+  .section--works-title {
+    padding: 4rem 1rem;
+  }
+
+  .section__testimonials-wrap {
+    margin-bottom: 4rem;
+  }
+}
+
+
+@include phones {
+  .section__line {
+    margin-bottom: 12vw;
+  }
+
+  .section--about-me {
+    .section__body {
+      padding-bottom: 6vw;
+    }
+
+    .section__title {
+      padding-top:    5vw;
+      padding-bottom: 4vw;
+    }
+
+    & .double-title__text {
+      max-width: calc(5em + 80px);
+    }
+  }
+
+  .section__testimonials-wrap {
+    margin-bottom: 8vw;
+  }
+
+  .section__btn-top {
+    width:  17vw;
+    height: 17vw;
+  }
+}
+
+
+@include phones--sm {
+  .section--about-me {
+    .section__body {
+      padding-left:  1rem;
+      padding-right: 1rem;
+    }
+  }
+}

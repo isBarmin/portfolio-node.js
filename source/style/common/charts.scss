@@ -1,0 +1,64 @@
+.graph {
+   display: inline-block;
+   width:  12rem;
+   height: 12rem;
+   text-align: center;
+
+   &__in {
+      border-radius: 50%;
+      transform: rotate(-90deg);
+   }
+
+   circle {
+      stroke-width: 32;
+   }
+
+  &__full {
+      fill: transparent;
+      stroke: #DFDCD5;
+      stroke-dasharray: 110 100;
+   }
+   &__part {
+      fill: transparent;
+      stroke: $green;
+      stroke-dasharray: inherit;
+      transition: stroke-dasharray .8s;
+   }
+}
+
+
+.graph--tor {
+   position: relative;
+   circle {
+      stroke-width: 10;
+   }
+
+   &:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 2.5rem;  right: 2.5rem;
+      top: 50%;
+      margin: auto;
+      color: $green;
+      font-size: 1.4rem;
+      line-height: 1.143;
+      font-weight: 600;
+      transform: translateY(-50%);
+   }
+}
+
+
+
+@include tablets {
+   .graph {
+      width:  11rem;
+      height: 11rem;
+   }
+
+   .graph--tor {
+
+      &:before {
+         font-size: 1.3rem;
+      }
+   }
+}

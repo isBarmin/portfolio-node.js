@@ -1,0 +1,37 @@
+extends ../_template-admin
+
+block variables
+  - var title = 'Blog'
+
+
+
+
+
+block content
+  .adm-tab
+      .adm-tab__head
+        a.adm-tab__control.adm-tab__control--active(href="#posts") Блог
+        a.adm-tab__control(href="#skills") Мои навыки
+        a.adm-tab__control(href="#works")  Мои работы
+
+      .adm-tab__body.adm-tab__body--active
+        .adm-tab__part
+          .adm-title Страница «Блог»
+
+          include pages/_posts
+
+
+
+      .adm-tab__body
+        .adm-tab__part
+          .adm-title Страница «Обо мне»
+
+          include pages/_skills
+
+
+
+      .adm-tab__body
+        .adm-tab__part
+          .adm-title Страница «Мои работы»
+
+          include pages/_works
