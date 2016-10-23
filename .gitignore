@@ -34,4 +34,5 @@ _materials
 .svn
 node_modules
 source/bower
+public/upload
 bower_components
